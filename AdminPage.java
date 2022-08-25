@@ -349,3 +349,166 @@ public class AdminPage implements ActionListener,MouseListener{
 public static void main(String[] args) {
     new AdminPage();
 }
+	
+	 @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+
+        String deletedUser=deleteTF2.getText();
+        if(e.getSource()==button1)
+        {
+            System.out.println(deletedUser);
+            showMsgLabel.setText("Acount of '"+deletedUser+"' has been removed");
+    
+        }
+
+        if(e.getSource()==select1)
+        {
+            JFileChooser fileChooser=new JFileChooser();
+            int response=fileChooser.showOpenDialog(null);
+            String i="kujhi";
+
+            if(response==JFileChooser.APPROVE_OPTION)
+            {
+                File file1=new File(fileChooser.getSelectedFile().getAbsolutePath());
+                i=file1.getAbsolutePath();
+                try {
+                    Desktop.getDesktop().open(file1);
+                    System.out.println(i);
+
+                } catch (IOException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
+
+            }
+            ImageIcon icon= new ImageIcon(i);
+            frame.setIconImage(icon.getImage());
+        } 
+        
+
+        if(e.getSource()==select2)
+        {
+            JFileChooser fileChooser=new JFileChooser();
+            int response=fileChooser.showOpenDialog(null);
+            String i="kujhi";
+
+            if(response==JFileChooser.APPROVE_OPTION)
+            {
+                File file1=new File(fileChooser.getSelectedFile().getAbsolutePath());
+                i=file1.getAbsolutePath();
+                try {
+                    Desktop.getDesktop().open(file1);
+                    System.out.println(i);
+
+                } catch (IOException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
+
+            }
+            ImageIcon icon= new ImageIcon(i);
+            frame.setIconImage(icon.getImage());
+        } 
+        
+        if(e.getSource()==select3)
+        {
+            JFileChooser fileChooser=new JFileChooser();
+            int response=fileChooser.showOpenDialog(null);
+            String i="kujhi";
+
+            if(response==JFileChooser.APPROVE_OPTION)
+            {
+                File file1=new File(fileChooser.getSelectedFile().getAbsolutePath());
+                i=file1.getAbsolutePath();
+                try {
+                    Desktop.getDesktop().open(file1);
+                    System.out.println(i);
+
+                } catch (IOException e1) {
+                    // TODO Auto-generated catch block
+                    e1.printStackTrace();
+                }
+
+            }
+            ImageIcon icon= new ImageIcon(i);
+            frame.setIconImage(icon.getImage());
+        } 
+        
+       
+    }
+
+
+
+    @Override
+    public void mouseClicked(MouseEvent e) {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+
+    @Override
+    public void mousePressed(MouseEvent e) {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        // TODO Auto-generated method stub
+        
+    }
+
+
+
+    @Override
+    public void mouseEntered(MouseEvent e) {
+        // TODO Auto-generated method stub
+        if(e.getSource()==logOutButton)
+        {
+            // logOutButton.setIcon(new ImageIcon("logOut20.png"));
+
+            try {
+                Thread.sleep(300);
+                Point location = MouseInfo.getPointerInfo().getLocation();
+                int x = (int) location.getX();
+                int y = (int) location.getY();
+    
+                logOutLabel.setVisible(true);          
+                logOutLabel.setText("Log Out");
+                logOutLabel.setForeground(new Color(0x292929));
+                logOutLabel.setBackground(new Color(0xFFC3C3));
+                logOutLabel.setOpaque(true);
+                logOutLabel.setHorizontalAlignment(JLabel.CENTER);
+                logOutLabel.setVerticalAlignment(JLabel.CENTER);
+                logOutLabel.setLocation(x, y-15);
+                logOutLabel.setBorder(border);
+
+
+            } catch (InterruptedException e1) {
+                // TODO Auto-generated catch block
+                e1.printStackTrace();
+            }
+            
+            
+            
+
+        }
+        
+    }
+
+
+
+    @Override
+    public void mouseExited(MouseEvent e) {
+        // TODO Auto-generated method stub
+      
+        logOutLabel.setVisible(false);
+        // logOutButton.setIcon(new ImageIcon("logOut4.png"));
+        
+    }
+
+}
